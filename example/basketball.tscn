@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://drbyinwpoky1o"]
+
+[ext_resource type="Texture2D" uid="uid://dsqbg01wm54b8" path="res://basketball.png" id="1_512qa"]
+[ext_resource type="Script" uid="uid://13of8uc27lmu" path="res://basketball.gd" id="1_impb6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_512qa"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_512qa"]
+radius = 82.0244
+
+[node name="Basketball" type="RigidBody2D" groups=["basketball"]]
+physics_material_override = SubResource("PhysicsMaterial_512qa")
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("1_impb6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_512qa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_512qa")

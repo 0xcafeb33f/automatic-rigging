@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://bav14bl771nke"]
+
+[ext_resource type="Texture2D" uid="uid://ci2sc0ug8ngwk" path="res://trex.png" id="1_s7j02"]
+
+[node name="TRex" type="Node2D"]
+
+[node name="Offset" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Offset"]
+texture = ExtResource("1_s7j02")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Offset"]
+
+[node name="Body1" type="Bone2D" parent="Offset/Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Body2" type="Bone2D" parent="Offset/Skeleton2D/Body1"]
+position = Vector2(-88, -71)
+rest = Transform2D(1, 0, 0, 1, -88, -71)
+
+[node name="TopHead" type="Bone2D" parent="Offset/Skeleton2D/Body1/Body2"]
+position = Vector2(-38, -54)
+rest = Transform2D(1, 0, 0, 1, -38, -54)
+auto_calculate_length_and_angle = false
+length = 126.595
+bone_angle = 180.0
+
+[node name="BottomHead" type="Bone2D" parent="Offset/Skeleton2D/Body1/Body2"]
+position = Vector2(-38, -54)
+rest = Transform2D(1, 0, 0, 1, -38, -54)
+auto_calculate_length_and_angle = false
+length = 126.595
+bone_angle = 180.0
+
+[node name="LeftLeg1" type="Bone2D" parent="Offset/Skeleton2D/Body1"]
+position = Vector2(-44, 100)
+rest = Transform2D(1, 0, 0, 1, -44, 100)
+
+[node name="LeftLeg2" type="Bone2D" parent="Offset/Skeleton2D/Body1/LeftLeg1"]
+position = Vector2(8, 45)
+rest = Transform2D(1, 0, 0, 1, 8, 45)
+auto_calculate_length_and_angle = false
+length = 55.0
+bone_angle = 110.27
+
+[node name="RightLeg1" type="Bone2D" parent="Offset/Skeleton2D/Body1"]
+position = Vector2(47, 95)
+rest = Transform2D(1, 0, 0, 1, 47, 95)
+
+[node name="RightLeg2" type="Bone2D" parent="Offset/Skeleton2D/Body1/RightLeg1"]
+position = Vector2(10, 51)
+rest = Transform2D(1, 0, 0, 1, 10, 51)
+auto_calculate_length_and_angle = false
+length = 52.865
+bone_angle = 103.784
+
+[node name="Tail1" type="Bone2D" parent="Offset/Skeleton2D/Body1"]
+position = Vector2(89, 72)
+rest = Transform2D(1, 0, 0, 1, 89, 72)
+
+[node name="Tail2" type="Bone2D" parent="Offset/Skeleton2D/Body1/Tail1"]
+position = Vector2(78, 6)
+rest = Transform2D(1, 0, 0, 1, 78, 6)
+auto_calculate_length_and_angle = false
+length = 108.162
+bone_angle = -12.973
+
+[node name="BottomArm1" type="Bone2D" parent="Offset/Skeleton2D/Body1"]
+position = Vector2(-92, 51)
+rest = Transform2D(1, 0, 0, 1, -92, 51)
+
+[node name="BottomArm2" type="Bone2D" parent="Offset/Skeleton2D/Body1/BottomArm1"]
+position = Vector2(-43, 0)
+rest = Transform2D(1, 0, 0, 1, -43, 0)
+auto_calculate_length_and_angle = false
+length = 43.649
+bone_angle = 201.081
+
+[node name="TopArm1" type="Bone2D" parent="Offset/Skeleton2D/Body1"]
+position = Vector2(-105, 9)
+rest = Transform2D(1, 0, 0, 1, -105, 9)
+
+[node name="TopArm2" type="Bone2D" parent="Offset/Skeleton2D/Body1/TopArm1"]
+position = Vector2(-45, 0)
+rest = Transform2D(1, 0, 0, 1, -45, 0)
+auto_calculate_length_and_angle = false
+length = 34.432
+bone_angle = 214.054
