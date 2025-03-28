@@ -729,6 +729,7 @@ func _run() -> void:
 					var modification: SkeletonModification2DLookAt = SkeletonModification2DLookAt.new()
 					modification.bone2d_node = skeleton.get_path_to(bones[0])
 					modification.target_nodepath = skeleton.get_path_to(target)
+					modification.resource_local_to_scene = true
 					modifications.add_modification(modification)
 			elif len(bones) == 2:
 				var modification: SkeletonModification2DTwoBoneIK = SkeletonModification2DTwoBoneIK.new()
@@ -736,6 +737,7 @@ func _run() -> void:
 				modification.set_joint_two_bone2d_node(skeleton.get_path_to(bones[1]))
 				modification.flip_bend_direction = is_angle_greater(bones[0].get_bone_angle(), bones[1].get_bone_angle())
 				modification.target_nodepath = skeleton.get_path_to(target)
+				modification.resource_local_to_scene = true
 				modifications.add_modification(modification)
 			elif len(bones) > 2:
 				var modification: SkeletonModification2DFABRIK = SkeletonModification2DFABRIK.new()
@@ -743,8 +745,9 @@ func _run() -> void:
 				for i in range(0, len(bones)):
 					modification.set_fabrik_joint_bone2d_node(i, skeleton.get_path_to(bones[i]))
 				modification.target_nodepath = skeleton.get_path_to(target)
+				modification.resource_local_to_scene = true
 				modifications.add_modification(modification)
+		modifications.resource_local_to_scene = true
 		
 		modifications.enable_all_modifications(true)
 		modifications.enabled = true
-		modifications.resource_local_to_scene = true
