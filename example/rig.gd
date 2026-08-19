@@ -33,7 +33,7 @@ func get_all_bones(parent: Node) -> Array[Bone2D]:
 func filter_text(s: String) -> String:
 	var buf: PackedByteArray = s.to_ascii_buffer()
 	var i: int = 0
-	for b in buf:
+	for b in buf.duplicate():
 		if not ((b >= 97 and b <= 122) or (b >= 65 and b <= 90)):
 			buf.remove_at(i)
 		else:
